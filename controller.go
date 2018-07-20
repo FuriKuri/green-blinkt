@@ -40,10 +40,10 @@ func max(a, b int32) int32 {
 }
 
 func generate() LedColor {
-	g := rand.Int31n(255)
-	b := rand.Int31n(max(g-100, 0))
-	r := rand.Int31n(max(g-50, 0))
-	l := rand.Int31n(8)
+	g := rand.Int31n(256)
+	b := rand.Int31n(max(g-100, 1))
+	r := rand.Int31n(max(g-50, 1))
+	l := rand.Int31n(9)
 	return LedColor{Red: r, Blue: b, Green: g, Led: l}
 }
 
