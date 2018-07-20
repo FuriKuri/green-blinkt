@@ -32,10 +32,17 @@ func (c *BlinktController) Run() {
 	}
 }
 
+func max(a, b int32) int32 {
+	if a > b {
+		return a
+	}
+	return b
+}
+
 func generate() LedColor {
 	g := rand.Int31n(255)
-	b := rand.Int31n(g - 100)
-	r := rand.Int31n(g - 50)
+	b := rand.Int31n(max(g-100, 0))
+	r := rand.Int31n(max(g-50, 0))
 	l := rand.Int31n(8)
 	return LedColor{Red: r, Blue: b, Green: g, Led: l}
 }

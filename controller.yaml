@@ -42,4 +42,4 @@ spec:
       serviceAccountName: blinkt-controller
       containers:
         - name: green-blinkt
-          image: furikuri/green-blinkt:2
+          image: furikuri/green-blinkt
